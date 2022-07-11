@@ -1,8 +1,8 @@
 import { createContext, ReactElement, CSSProperties } from 'react';
-import styles from "../styles/styles.module.css";
+import styles from '../styles/styles.module.css';
 
-import { useProduct } from "../hooks/useProduct";
-import { onChangeArgs, Product, ProductContextProps  } from "../interfaces/interfaces";
+import { useProduct } from '../hooks/useProduct';
+import { onChangeArgs, Product, ProductContextProps  } from '../interfaces/interfaces';
 
 
 
