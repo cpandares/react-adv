@@ -12,8 +12,6 @@ import useShoppingCart from '../hooks/useShoppingCart';
 import { products } from '../data/products';
 
 
-
-
 export const ShoppingPage = () => {
 
   const { onProductChange, shoppingCart } =  useShoppingCart()

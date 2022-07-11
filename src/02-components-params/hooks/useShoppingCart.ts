@@ -56,7 +56,7 @@ const useShoppingCart = () => {
     };
 
     return{
-        onProductChange,products, shoppingCart
+        onProductChange, shoppingCart
     }
 };
 
