@@ -20,24 +20,8 @@ const useShoppingCart = () => {
         
       
         
-        setShoppingCart((oldShoppingCart) => {
-    
-            const productIncart:ProductInCart = oldShoppingCart[product.id] || { ...product,count: 0 };
-    
-            if( Math.max( productIncart.count + count,0 )>0 ){
-                productIncart.count +=count;
-                return{
-                    ...oldShoppingCart,
-                    [product.id]: productIncart
-                }
-            }
-    
-            /* Borrar el producto */
-    
-            const { [product.id]: toDelete, ...rest } = oldShoppingCart;
-            return rest;
-    
-            /* 
+        setShoppingCart((oldShoppingCart) => {    
+           
     
           if (count === 0) {
             const { [product.id]: toDelete, ...rest } = oldShoppingCart;
@@ -48,10 +32,10 @@ const useShoppingCart = () => {
             ...oldShoppingCart,
             [product.id]: { ...product, count },
           };
-        }); */
+        }); 
     
     
-        });   
+        
     
     };
 
