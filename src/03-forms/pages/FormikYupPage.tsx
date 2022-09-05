@@ -3,15 +3,13 @@ import * as Yup from 'yup';
 
 import '../styles/styles.css';
 
-interface FormValues {
-    name: string;
-    lastname: string;
-    email: string;
-}
 
 const FormikYupPage = () => {   
     
-    const { handleChange, values, handleSubmit,errors, touched, handleBlur } = useFormik({
+    const { handleSubmit,
+            errors, 
+            touched,
+            getFieldProps } = useFormik({
         initialValues:{
             name:'',
             lastname:'',
@@ -37,31 +35,23 @@ const FormikYupPage = () => {
 
         <label htmlFor="name">Name</label>
         <input 
-            type="text" 
-            name="name" 
-            onChange={ handleChange }
-            value={ values.name }
-            onBlur = { handleBlur }
+            type="text"     
+            { ...getFieldProps(('name')) }
             />
+
         { touched.name && errors.name && <span>{ errors.name }</span> }
 
         <label htmlFor="lastname">Lastname</label>
         <input 
             type="text" 
-            name="lastname" 
-            onChange={ handleChange }
-            value={ values.lastname }
-            onBlur = { handleBlur }
+            { ...getFieldProps(('lastname')) }
             />
        { touched.lastname && errors.lastname && <span>{ errors.lastname } </span> }
 
         <label htmlFor="email">Email</label>
         <input 
             type="text" 
-            name="email"
-            onChange={ handleChange }
-            value={ values.email }
-            onBlur = { handleBlur }
+            { ...getFieldProps(('email')) }
              />
         
        { touched.email && errors.email && <span>{ errors.email }</span> }
