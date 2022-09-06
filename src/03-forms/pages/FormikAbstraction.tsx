@@ -1,12 +1,12 @@
-import { useFormik, Formik, Field, Form, ErrorMessage  } from 'formik';
+import {  Formik, Form  } from 'formik';
+import { MyCheckboxInput, MySelectInput, MyTextInput } from '../components';
+
 import * as Yup from 'yup';
-import MyTextInput from '../components/MyTextInput';
 
 import '../styles/styles.css';
 
 
-const FormikAbstraction = () => {   
-    
+export const FormikAbstraction = () => {       
   
   return (
     <div>
@@ -39,29 +39,24 @@ const FormikAbstraction = () => {
                     <Form >
 
                     <MyTextInput label="Name" name="name" placeholder="Enter Name" />
-
                              
-                    <MyTextInput label="Lastname" name="lastname" placeholder="Enter Lastname" />
-            
+                    <MyTextInput label="Lastname" name="lastname" placeholder="Enter Lastname" />            
 
                     <MyTextInput label="Email address" name="email" placeholder="Enter Email" /> 
             
                   
-                    <label htmlFor="jobType">Email</label>
-                    <Field name="jobType" as="select">
+                  
+                    <MySelectInput name="jobType" label="jobType">
                         <option value="">Pick something</option>
                         <option value="developer">Developer</option>
                         <option value="designer">Designer</option>
                         <option value="it-jr">it-jr</option>
-                    </Field>
-                    <ErrorMessage name="jobType" component="span"/>  
+                    </MySelectInput>
+                     
 
+                    <MyCheckboxInput label="Terms & conditions" name="terms" />
 
-                    <label>
-                        Terms
-                        <Field name="terms" type="checkbox" />
-                    </label>
-                    <ErrorMessage name="terms" component="span"/>  
+                   
             
                     <button type="submit">
                         Submit

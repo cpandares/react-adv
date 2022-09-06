@@ -1,36 +1,34 @@
 
+
 import { useField, ErrorMessage } from 'formik';
 
 interface Props {
   label: string;
-  name: string;
-  type?: 'text' | 'email' | 'password';
-  placeholder?: string;
+  name: string; 
   [x:string] : any;
 
 }
 
-export const MyTextInput = ( { label, ...props }: Props) => {
+export const MySelectInput = ( { label, ...props}: Props) => {
 
-   const [ field /* , meta */ ] = useField(props);
+   const [ field /* , meta */ ] = useField(props)
 
   return (
     <>
       <label htmlFor={ props.id || props.name }>{ label }</label>
 
-      <input className='text-input' { ...field } { ...props } />
+      <select  { ...field } { ...props } />
       <ErrorMessage name={ props.name } component="span"/>
-
-      {/* errors 
+      {/* errors
       {
         meta.touched && meta.error && (
           <span className='error'>{ meta.error }</span>
-        )
-      }
-      */}
+          )
+        }
+        */}
     </>
   )
 
 }
 
-export default MyTextInput
+export default MySelectInput

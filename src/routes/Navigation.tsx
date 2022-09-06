@@ -3,12 +3,12 @@ import { BrowserRouter, Navigate, NavLink, Route, Routes } from "react-router-do
 
 import logo from "../logo.svg";
 
-import { LazyPage1, LazyPage2, LazyPage3 } from '../01-lazyload/pages'
 import RegisterPage from "../03-forms/pages/RegisterPage";
-import FormikBasicPage from "../03-forms/pages/FormikBasicPage";
-import FormikYupPage from "../03-forms/pages/FormikYupPage";
-import FormikComponents from "../03-forms/pages/FormikComponents";
-import FormikAbstraction from "../03-forms/pages/FormikAbstraction";
+
+import { FormikBasicPage, FormikYupPage, FormikComponents, FormikAbstraction } from "../03-forms/pages";
+
+
+
 
 const Navigation = () => {
   return (

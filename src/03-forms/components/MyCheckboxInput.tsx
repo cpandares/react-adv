@@ -3,23 +3,25 @@ import { useField, ErrorMessage } from 'formik';
 
 interface Props {
   label: string;
-  name: string;
-  type?: 'text' | 'email' | 'password';
-  placeholder?: string;
+  name: string; 
   [x:string] : any;
 
 }
 
-export const MyTextInput = ( { label, ...props }: Props) => {
+export const MyCheckboxInput = ( { label, ...props }: Props) => {
 
-   const [ field /* , meta */ ] = useField(props);
+   const [ field /* , meta */ ] = useField({...props, type:'checkbox'})
 
   return (
     <>
-      <label htmlFor={ props.id || props.name }>{ label }</label>
+      <label >
 
-      <input className='text-input' { ...field } { ...props } />
+        <input type="checkbox" { ...field } { ...props } />
+        { label }
+
+      </label>
       <ErrorMessage name={ props.name } component="span"/>
+      
 
       {/* errors 
       {
@@ -33,4 +35,4 @@ export const MyTextInput = ( { label, ...props }: Props) => {
 
 }
 
-export default MyTextInput
+export default MyCheckboxInput
