@@ -1,0 +1,73 @@
+
+
+[
+    {
+        "type": "input",
+        "name": "firstName",
+        "placeholder": "Cesar",
+        "label" : "First name",
+        "value": "",
+        "validations": [
+            {
+                "type":"required"
+            },
+            {
+                "type":"minLength",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "name": "lastName",
+        "placeholder": "pandares",
+        "label" : "Lastname name",
+        "value": "",
+        "validations": [
+            {
+                "type":"required"
+            }
+        ]
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "pandares@gmail.com",
+        "label" : "Email",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "email"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "name": "favoriteGame",    
+        "label": "Favorite Game",
+        "value": "",
+        "validations": [
+            {
+                "type":"required"
+            }
+        ],
+        "options": [
+            {
+                "id": 1,
+                "description":"COD"
+            },
+            {
+                "id": 2,
+                "description":"GOD asencition"
+            },
+            {
+                "id": 3,
+                "description":"Metal Gear"
+            }
+        ]
+    }
+
+]
